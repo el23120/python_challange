@@ -1,34 +1,29 @@
+# Import depend
 import os
 import csv
-input_file = os.path.join('Resoursces', 'budget_data.csv')
+input_file = os.path.join('Resoursces','election_data.csv' )
 
-total_months = 0
-total_profit = 0
-monthly_profit_change = []
-with open(input_file, newline='') as cvsfile:
-    cvsreader = csv.reader(cvsfile, delimiter=',')
-    csvheader = next(cvsreader)
-    for row in cvsreader: 
-        total_months = total_months +1 
-        total_profit = total_profit+(row[1])
-        print(total_profit)
-        break
-    for i in range(len(total_profit)-1):
-        monthly_profit_change.append(total_profit[i+1]-total_profit[i])
-        break
-max_increase_value = max(monthly_profit_change)     
-max_decrease_value = min(monthly_profit_change)
+#decl vari
+total_votes = 0
+khan_votes = 0
+correy_votes = 0
+li_votes = 0
+otooley_votes = 0
 
-max_increase_month = monthly_profit_change.index(max(monthly_profit_change)) + 1
-max_decrease_month = monthly_profit_change.index(min(monthly_profit_change)) + 1
+csvreader = csv.reader(elections,delimiter=",") 
 
-print("Financial Analysis")
-print("----------------------------")
-print(f"Total Months: {len(total_months)}")
-print(f"Total: ${sum(total_profit)}")
-print(f"Greatest Increase in Profits: {total_months[max_increase_month]} (${(str(max_increase_value))})")
-print(f"Greatest Decrease in Profits: {total_months[max_decrease_month]} (${(str(max_decrease_value))})")
-#         total_profit.append(int(row[1]))
-# rows in the stored file contents
-#     
-#     for row in csvreader: 
+for row in csvreader:
+    total_votes = +1
+
+    if row[2] = "Khan":
+        khan_votes = +1
+    elif row[2] = "Correy":
+        correy_votes = +1
+    elif row[2] = "Li":
+        li_votes = +1
+    elif row[2] = "O'Tooley":
+        otooley_votes = +1
+
+canidates = ["Khan", "Correy", "Li", "O'Tooley"]
+votes = [khan_votes, correy_votes, li_votes, otooley_votes]
+
